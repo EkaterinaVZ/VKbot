@@ -19,4 +19,4 @@
  <p>If the step is not passed, we ask a clarifying question until the step is passed.
  If the command (/ticket or /help) is entered during the script,
  then the script stops and the command is executed</p>
-  <body>
+  </body>
