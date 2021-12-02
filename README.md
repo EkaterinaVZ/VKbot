@@ -1,8 +1,9 @@
 # VKbot
 <h3>Echo bot for vk.com<h3>
- Use python 3.9
+<p>Use python 3.9<p>
 
- The scenario of choosing a flight and booking tickets for the flight.
+ <body>
+ <p>The scenario of choosing a flight and booking tickets for the flight.
  We select and issue tickets for a domestic flight, send them to e-mail:
  - we offer help;
  - requesting the city of departure;
@@ -17,4 +18,5 @@
  - we send a letter by e-mail
  If the step is not passed, we ask a clarifying question until the step is passed.
  If the command (/ticket or /help) is entered during the script,
- then the script stops and the command is executed
+ then the script stops and the command is executed<p>
+  <body>
