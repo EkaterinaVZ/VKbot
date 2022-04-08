@@ -3,7 +3,7 @@ chardet==4.0.0
 freezegun==1.1.0
 idna==3.1
 Pillow==8.2.0
-pony==0.7.14
+pony
 postgres==3.0.0
 psycopg2==2.8.6
 psycopg2-binary==2.8.6
