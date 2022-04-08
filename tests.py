@@ -3,7 +3,7 @@ from copy import deepcopy
 from freezegun import freeze_time
 from pony.orm import rollback, db_session
 from unittest import TestCase
-from unittest.mock import patch, Mock, ANY
+from unittest.mock import patch, Mock
 from vk_api.bot_longpoll import VkBotMessageEvent
 
 import settings
@@ -84,7 +84,7 @@ class Test2(TestCase):
         settings.SCENARIOS["book_tickets"]["steps"]["step4"]["text"].format(city_from='Москва', city_to='Екатеринбург',
                                                                             date='06-04-2021',
                                                                             flight_schedule=
-                                                                            '(по вторникам и пятницам); '
+                                                                            '(по вторникам и пятницам);'
                                                                             '1) 06-04-2021 07.00; '
                                                                             '2) 06-04-2021 19.15; '
                                                                             '3) 09-04-2021 20.40; '
