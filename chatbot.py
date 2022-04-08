@@ -10,7 +10,7 @@ import handlers
 import requests
 # import settings_schedule
 from models import UserState, Registration
-# from pony.orm import db_session, commit, flush
+from pony.orm import db_session, commit, flush
 
 try:
     import settings
