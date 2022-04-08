@@ -1,14 +1,14 @@
 import unittest
 from copy import deepcopy
+from freezegun import freeze_time
+from pony.orm import rollback, db_session
 from unittest import TestCase
 from unittest.mock import patch, Mock, ANY
+from vk_api.bot_longpoll import VkBotMessageEvent
 
 import settings
 from chatbot import Bot
-from freezegun import freeze_time
 from generate_ticket import generate_ticket
-from pony.orm import rollback, db_session
-from vk_api.bot_longpoll import VkBotMessageEvent
 
 
 def isolate_db(test_funk):
@@ -26,7 +26,8 @@ class Test2(TestCase):
         'object': {'message': {'date': 1615815564, 'from_id': 5070114, 'id': 184, 'out': 0,
                                'peer_id': 5070114, 'text': 'ghxfghjf', 'conversation_message_id': 183,
                                'fwd_messages': [], 'important': False, 'random_id': 0, 'attachments': [],
-                               'is_hidden': False}, 'client_info':
+                               'is_hidden': False},
+                   'client_info':
                        {'button_actions': ['text', 'vkpay', 'open_app', 'location', 'open_link', 'callback',
                                            'intent_subscribe',
                                            'intent_unsubscribe'], 'keyboard': True, 'inline_keyboard': True,
@@ -81,9 +82,14 @@ class Test2(TestCase):
         settings.SCENARIOS["book_tickets"]["steps"]["step2"]["text"],
         settings.SCENARIOS["book_tickets"]["steps"]["step3"]["text"],
         settings.SCENARIOS["book_tickets"]["steps"]["step4"]["text"].format(city_from='Москва', city_to='Екатеринбург',
-                        date='06-04-2021',
-                        flight_schedule='(по вторникам и пятницам); 1) 06-04-2021 07.00; '
-                        '2) 06-04-2021 19.15; 3) 09-04-2021 20.40; 4) 13-04-2021 07.00; 5) 13-04-2021 19.15'),
+                                                                            date='06-04-2021',
+                                                                            flight_schedule=
+                                                                            '(по вторникам и пятницам); '
+                                                                            '1) 06-04-2021 07.00; '
+                                                                            '2) 06-04-2021 19.15; '
+                                                                            '3) 09-04-2021 20.40; '
+                                                                            '4) 13-04-2021 07.00; '
+                                                                            '5) 13-04-2021 19.15'),
         settings.SCENARIOS["book_tickets"]["steps"]["step5"]["text"],
         settings.SCENARIOS["book_tickets"]["steps"]["step6"]["text"],
         settings.SCENARIOS["book_tickets"]["steps"]["step7"]["text"],
