@@ -2,16 +2,15 @@
 import logging
 import random
 import smtplib
-from collections import defaultdict
-# Import the email modules we'll need
+# from collections import defaultdict
 from email.message import EmailMessage
-from random import choice
+# from random import choice
 
 import handlers
 import requests
-import settings_schedule
+# import settings_schedule
 from models import UserState, Registration
-from pony.orm import db_session, commit, flush
+# from pony.orm import db_session, commit, flush
 
 try:
     import settings
